@@ -4,10 +4,10 @@ docker run -d --name some-clickhouse-server -p 8123:8123 -p 9000:9000 --ulimit n
 connect dbeaver to CH --user=default --host=localhost --port=8123
 then execute
 
-CREATE TABLE songs
+CREATE TABLE default.songs
 (
-    ts DateTime,
-    userid String,
+    ts DateTime64(3, 'Europe/Moscow'),
+    userId String,
     sessionId UInt8,
     page String,
     auth String,
@@ -19,12 +19,11 @@ CREATE TABLE songs
     userAgent String,
     lastName String,
     firstName String,
-    registration DateTime,
+    registration DateTime64(3, 'Europe/Moscow'),
     gender FixedString(1),
     artist String,
     song String,
     length Float32
-    
     
 )
 ENGINE = MergeTree()
