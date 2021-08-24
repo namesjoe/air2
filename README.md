@@ -6,7 +6,7 @@ then execute
 
 CREATE TABLE default.songs
 (
-    ts DateTime64(3, 'Europe/Moscow'),
+    ts DateTime('Europe/Moscow'),
     userId String,
     sessionId UInt8,
     page String,
@@ -19,7 +19,7 @@ CREATE TABLE default.songs
     userAgent String,
     lastName String,
     firstName String,
-    registration DateTime64(3, 'Europe/Moscow'),
+    registration DateTime('Europe/Moscow'),,
     gender FixedString(1),
     artist String,
     song String,
